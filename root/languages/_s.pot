@@ -1,14 +1,14 @@
-# Copyright (C) 2013 Automattic
+# Copyright (C) {%= grunt.template.today('yyyy') %} {%= author_name %}
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0-wpcom\n"
+"Project-Id-Version: {%= title %} 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2013-12-04 02:25:46+00:00\n"
+"POT-Creation-Date: 2015-06-01 03:31:14+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -31,158 +31,31 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: archive.php:31
-msgid "Author: %s"
-msgstr ""
-
-#: archive.php:39
-msgid "Day: %s"
-msgstr ""
-
-#: archive.php:42
-msgid "Month: %s"
-msgstr ""
-
-#: archive.php:42
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: archive.php:45
-msgid "Year: %s"
-msgstr ""
-
-#: archive.php:45
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: archive.php:48
-msgid "Asides"
-msgstr ""
-
-#: archive.php:51
-msgid "Images"
-msgstr ""
-
-#: archive.php:54
-msgid "Videos"
-msgstr ""
-
-#: archive.php:57
-msgid "Quotes"
-msgstr ""
-
-#: archive.php:60
-msgid "Links"
-msgstr ""
-
-#: archive.php:63 sidebar.php:17
-msgid "Archives"
-msgstr ""
-
-#: comments.php:30
+#: comments.php:29
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:37 comments.php:57
+#: comments.php:38 comments.php:59
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:38 comments.php:58
-msgid "&larr; Older Comments"
+#: comments.php:41 comments.php:62
+msgid "Older Comments"
 msgstr ""
 
-#: comments.php:39 comments.php:59
-msgid "Newer Comments &rarr;"
+#: comments.php:42 comments.php:63
+msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:69
+#: comments.php:75
 msgid "Comments are closed."
 msgstr ""
 
-#: content-none.php:13
-msgid "Nothing Found"
-msgstr ""
-
-#: content-none.php:19
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: content-none.php:23
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-
-#: content-none.php:28
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-
-#: content-page.php:18 content-single.php:20 content.php:27
-msgid "Pages:"
-msgstr ""
-
-#: content-page.php:23 content-single.php:60 content.php:61
-#: inc/template-tags.php:81 inc/template-tags.php:100
-msgid "Edit"
-msgstr ""
-
-#. translators: used between list items, there is a space after the comma
-#: content-single.php:29 content-single.php:32 content.php:38 content.php:48
-msgid ", "
-msgstr ""
-
-#: content-single.php:37
-msgid ""
-"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
-"\">permalink</a>."
-msgstr ""
-
-#: content-single.php:39
-msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
-msgstr ""
-
-#: content-single.php:45
-msgid ""
-"This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
-"rel=\"bookmark\">permalink</a>."
-msgstr ""
-
-#: content-single.php:47
-msgid ""
-"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
-"\">permalink</a>."
-msgstr ""
-
-#: content.php:24
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: content.php:42
-msgid "Posted in %1$s"
-msgstr ""
-
-#: content.php:52
-msgid "Tagged %1$s"
-msgstr ""
-
-#: content.php:58
-msgid "Leave a comment"
-msgstr ""
-
-#: content.php:58
-msgid "1 Comment"
-msgstr ""
-
-#: content.php:58
-msgid "% Comments"
+#: footer.php:16
+msgid "http://wordpress.org/"
 msgstr ""
 
 #: footer.php:16
@@ -193,23 +66,19 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:45
+#: functions.php:45 header.php:32
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:65
+#: functions.php:100
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:31
-msgid "Menu"
-msgstr ""
-
-#: header.php:32
+#: header.php:23
 msgid "Skip to content"
 msgstr ""
 
-#: inc/extras.php:63
+#: inc/extras.php:52
 msgid "Page %s"
 msgstr ""
 
@@ -218,71 +87,186 @@ msgid "Posts navigation"
 msgstr ""
 
 #: inc/template-tags.php:27
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgid "Older posts"
 msgstr ""
 
 #: inc/template-tags.php:31
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgid "Newer posts"
 msgstr ""
 
 #: inc/template-tags.php:56
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:59
-msgctxt "Previous post link"
-msgid "<span class=\"meta-nav\">&larr;</span> %title"
-msgstr ""
-
-#: inc/template-tags.php:60
-msgctxt "Next post link"
-msgid "%title <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: inc/template-tags.php:81
-msgid "Pingback:"
+#: inc/template-tags.php:86
+msgctxt "post date"
+msgid "Posted on %s"
 msgstr ""
 
 #: inc/template-tags.php:91
-msgid "%s <span class=\"says\">says:</span>"
+msgctxt "post author"
+msgid "by %s"
 msgstr ""
 
-#: inc/template-tags.php:97
-msgctxt "1: date, 2: time"
-msgid "%1$s at %2$s"
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:108 inc/template-tags.php:114
+msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:104
-msgid "Your comment is awaiting moderation."
+#: inc/template-tags.php:110
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc/template-tags.php:116
+msgid "Tagged %1$s"
+msgstr ""
+
+#: inc/template-tags.php:122
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:122
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:122
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:126 template-parts/content-page.php:26
+msgid "Edit"
+msgstr ""
+
+#: inc/template-tags.php:143
+msgid "Category: %s"
 msgstr ""
 
 #: inc/template-tags.php:145
-msgid ""
-"<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
-"%2$s</span>"
+msgid "Tag: %s"
+msgstr ""
+
+#: inc/template-tags.php:147
+msgid "Author: %s"
+msgstr ""
+
+#: inc/template-tags.php:149
+msgid "Year: %s"
+msgstr ""
+
+#: inc/template-tags.php:149
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: inc/template-tags.php:151
+msgid "Month: %s"
+msgstr ""
+
+#: inc/template-tags.php:151
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: inc/template-tags.php:153
+msgid "Day: %s"
+msgstr ""
+
+#: inc/template-tags.php:153
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: inc/template-tags.php:156
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr ""
+
+#: inc/template-tags.php:158
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr ""
+
+#: inc/template-tags.php:160
+msgctxt "post format archive title"
+msgid "Images"
+msgstr ""
+
+#: inc/template-tags.php:162
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr ""
+
+#: inc/template-tags.php:164
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr ""
+
+#: inc/template-tags.php:166
+msgctxt "post format archive title"
+msgid "Links"
+msgstr ""
+
+#: inc/template-tags.php:168
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr ""
+
+#: inc/template-tags.php:170
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr ""
+
+#: inc/template-tags.php:172
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr ""
+
+#: inc/template-tags.php:175
+msgid "Archives: %s"
+msgstr ""
+
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+#: inc/template-tags.php:179
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: inc/template-tags.php:181
+msgid "Archives"
 msgstr ""
 
 #: search.php:16
 msgid "Search Results for: %s"
 msgstr ""
 
-#: searchform.php:10
-msgctxt "label"
-msgid "Search for:"
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
 msgstr ""
 
-#: searchform.php:11
-msgctxt "placeholder"
-msgid "Search &hellip;"
+#: template-parts/content-none.php:20
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: searchform.php:13
-msgctxt "submit button"
-msgid "Search"
+#: template-parts/content-none.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
 msgstr ""
 
-#: sidebar.php:24
-msgid "Meta"
+#: template-parts/content-none.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:19 template-parts/content-single.php:23
+#: template-parts/content.php:32
+msgid "Pages:"
+msgstr ""
+
+#. translators: %s: Name of current post
+#: template-parts/content.php:25
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #. Theme Name of the plugin/theme

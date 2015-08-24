@@ -6,6 +6,7 @@
  *
  * @package {%= title %}
  */
+
 ?>
 
 		<?php do_action( '{%= prefix %}_after_content' ); ?>
@@ -20,8 +21,9 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<?php do_action( '{%= prefix %}_after_body' ); ?>
+
 <?php wp_footer(); ?>
 
-<?php do_action( '{%= prefix %}_after_body' ); ?>
 </body>
 </html>

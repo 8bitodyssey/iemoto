@@ -23,21 +23,39 @@ exports.template = function( grunt, init, done ) {
             message: 'PHP function prefix (alpha and underscore characters only)',
             default: 'iemoto'
         },
-        init.prompt( 'description', 'Underscores based Megumi theme' ),
+        init.prompt( 'description', 'Megumi theme based on Underscores' ),
         init.prompt( 'homepage', 'https://www.digitalcube.jp/' ),
         init.prompt( 'author_name', 'DigitalCube Co.,Ltd' ),
         init.prompt( 'author_url', 'https://www.digitalcube.jp/' ),
+        {
+            name: 'gulp',
+            message: 'Use gulp?',
+            default: 'y/N'
+        }
     ], function( err, props ) {
         props.keywords = [];
         props.version = '0.1.0';
-        props.devDependencies = {
-            'grunt': '~0.4.1',
-            'grunt-contrib-uglify': '~0.1.1',
-            'grunt-contrib-jshint': '~0.1.1',
-            'grunt-contrib-nodeunit': '~0.1.2',
-            'grunt-contrib-compass': '*',
-            'grunt-contrib-cssmin': '*',
-        };
+        // Use gulp or grunt
+        if ( props.gulp == 'y' ) {
+            props.devDependencies = {
+                "gulp": "^3.8.0",
+                "gulp-compass": "^2.0.0",
+                "gulp-jshint": "^1.9.0",
+                "gulp-load-plugins": "^0.7.0",
+                "gulp-notify": "^2.1.0",
+                "gulp-plumber": "^0.6.6",
+                "gulp-replace": "^0.5.0"
+            };
+        } else {
+            props.devDependencies = {
+                "grunt": "^0.4.5",
+                "grunt-contrib-compass": "^1.0.0",
+                "grunt-contrib-jshint": "^0.10.0",
+                "grunt-contrib-watch": "^0.6.0",
+                "grunt-text-replace": "^0.4.0",
+                "load-grunt-tasks": "^1.0.0"
+            };
+        }
         // Sanitize names where we need to for PHP/JS
         props.name = props.title.replace( /\s+/g, '-' ).toLowerCase();
         // Development prefix (i.e. to prefix PHP function names, variables)
@@ -55,7 +73,7 @@ exports.template = function( grunt, init, done ) {
         var files = init.filesToCopy( props );
         console.log( files );
         // Actually copy and process files
-        init.copyAndProcess( files, props );
+        init.copyAndProcess( files, props, {noProcess: ['screenshot.png', 'languages/*.mo']} );
         // Generate package.json file
         init.writePackageJSON( 'package.json', props );
 
@@ -68,21 +86,29 @@ exports.template = function( grunt, init, done ) {
             }
         });
 
-        fs.stat(path.resolve('img'), function(err, stats){
+        fs.stat(path.resolve('images'), function(err, stats){
             if (err) {
-                fs.mkdir(path.resolve('img'));
+                fs.mkdir(path.resolve('images'));
             }
         });
 
-        fs.writeFileSync(
-            path.resolve('sass')+'/'+props.file_name+'.scss',
-            '@import "compass";\n@import "compass/reset";\n@import "_wordpress.scss";'
+        fs.renameSync(
+            path.resolve('js')+'/iemoto.js',
+            path.resolve('js')+'/'+props.file_name+'.js'
         );
 
-        fs.writeFileSync(
-            path.resolve('js')+'/'+props.file_name+'.js',
-            '(function($){})(jQuery);'
+        fs.renameSync(
+            path.resolve('languages')+'/_s.pot',
+            path.resolve('languages')+'/'+props.prefix+'.pot'
         );
+
+        if ( props.gulp == 'y' ) {
+            fs.unlinkSync('Gruntfile.js')
+            console.log('Deleted Gruntfile.js');
+        } else {
+            fs.unlinkSync('gulpfile.js')
+            console.log('Deleted gulpfile.js');
+        }
 
         // Done!
         done();

@@ -1,11 +1,10 @@
-# Copyright (C) 2013 Automattic
+# Copyright (C) {%= grunt.template.today('yyyy') %} {%= author_name %}
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0-wpcom\n"
+"Project-Id-Version: {%= title %} 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2013-12-04 02:25:46+00:00\n"
-"PO-Revision-Date: 2013-04-08 16:45+0900\n"
+"POT-Creation-Date: 2015-06-01 03:31:14+00:00\n"
 "Last-Translator: Kazue Igarashi <gatesapce.k@gmail.com>\n"
 "Language-Team: \n"
 "Language: JAPANESE\n"
@@ -34,165 +33,32 @@ msgstr "よく使われているカテゴリー"
 msgid "Try looking in the monthly archives. %1$s"
 msgstr "月別アーカイブを見てみてください。%1$s"
 
-#: archive.php:31
-msgid "Author: %s"
-msgstr "投稿者アーカイブ:  %s"
-
-#: archive.php:39
-msgid "Day: %s"
-msgstr "%sのアーカイブ"
-
-#: archive.php:42
-msgid "Month: %s"
-msgstr "%sのアーカイブ"
-
-#: archive.php:42
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr "Y年F"
-
-#: archive.php:45
-msgid "Year: %s"
-msgstr "%s年のアーカイブ"
-
-#: archive.php:45
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr "Y"
-
-#: archive.php:48
-msgid "Asides"
-msgstr "アサイド"
-
-#: archive.php:51
-msgid "Images"
-msgstr "画像"
-
-#: archive.php:54
-msgid "Videos"
-msgstr "動画"
-
-#: archive.php:57
-msgid "Quotes"
-msgstr "引用"
-
-#: archive.php:60
-msgid "Links"
-msgstr "リンク"
-
-#: archive.php:63 sidebar.php:17
-msgid "Archives"
-msgstr "アーカイブ"
-
-#: comments.php:30
+#: comments.php:29
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "「%2$s」への%1$s件のフィードバック"
 msgstr[1] "「%2$s」への%1$s件のフィードバック"
 
-#: comments.php:37 comments.php:57
+#: comments.php:38 comments.php:59
 msgid "Comment navigation"
 msgstr "コメントナビゲーション"
 
-#: comments.php:38 comments.php:58
-msgid "&larr; Older Comments"
-msgstr "&larr; 以前のコメント"
+#: comments.php:41 comments.php:62
+msgid "Older Comments"
+msgstr "以前のコメント"
 
-#: comments.php:39 comments.php:59
-msgid "Newer Comments &rarr;"
-msgstr "新しいコメント &rarr;"
+#: comments.php:42 comments.php:63
+msgid "Newer Comments"
+msgstr "新しいコメント"
 
-#: comments.php:69
+#: comments.php:75
 msgid "Comments are closed."
 msgstr "コメントは受け付けていません。"
 
-#: content-none.php:13
-msgid "Nothing Found"
-msgstr "何も見つかりませんでした"
-
-#: content-none.php:19
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+#: footer.php:16
+msgid "http://wordpress.org/"
 msgstr ""
-"最初の投稿を公開する準備ができましたか ?<a href=\"%1$s\">こちらからスタートし"
-"ましょう</a>。"
-
-#: content-none.php:23
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-"検索キーワードに一致するコンテンツが見つかりませんでした。他のキーワードをお"
-"試しください。"
-
-#: content-none.php:28
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr "お探しのコンテンツが見つかりません。検索をお試しください。"
-
-#: content-page.php:18 content-single.php:20 content.php:27
-msgid "Pages:"
-msgstr "ページ:"
-
-#: content-page.php:23 content-single.php:60 content.php:61
-#: inc/template-tags.php:81 inc/template-tags.php:100
-msgid "Edit"
-msgstr "編集"
-
-#. translators: used between list items, there is a space after the comma
-#: content-single.php:29 content-single.php:32 content.php:38 content.php:48
-msgid ", "
-msgstr ", "
-
-#: content-single.php:37
-msgid ""
-"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
-"\">permalink</a>."
-msgstr "タグ: %2$s. <a href=\"%3$s\" rel=\"bookmark\">パーマリンク</a>."
-
-#: content-single.php:39
-msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
-msgstr "<a href=\"%3$s\" rel=\"bookmark\">パーマリンク</a>"
-
-#: content-single.php:45
-msgid ""
-"This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
-"rel=\"bookmark\">permalink</a>."
-msgstr ""
-"カテゴリー: %1$s. タグ: %2$s. <a href=\"%3$s\" rel=\"bookmark\">パーマリンク"
-"</a>."
-
-#: content-single.php:47
-msgid ""
-"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
-"\">permalink</a>."
-msgstr "カテゴリー: %1$s. <a href=\"%3$s\" rel=\"bookmark\">パーマリンク</a>."
-
-#: content.php:24
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
-
-#: content.php:42
-msgid "Posted in %1$s"
-msgstr "カテゴリー: %1$s"
-
-#: content.php:52
-msgid "Tagged %1$s"
-msgstr "タグ: %1$s"
-
-#: content.php:58
-msgid "Leave a comment"
-msgstr "コメントをどうぞ"
-
-#: content.php:58
-msgid "1 Comment"
-msgstr "1件のコメント"
-
-#: content.php:58
-msgid "% Comments"
-msgstr "%件のコメント"
 
 #: footer.php:16
 msgid "Proudly powered by %s"
@@ -202,23 +68,19 @@ msgstr "Proudly powered by %s"
 msgid "Theme: %1$s by %2$s."
 msgstr "テーマ: %1$s by %2$s."
 
-#: functions.php:45
+#: functions.php:45 header.php:32
 msgid "Primary Menu"
 msgstr "メインメニュー"
 
-#: functions.php:65
+#: functions.php:100
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: header.php:31
-msgid "Menu"
-msgstr "メニュー"
-
-#: header.php:32
+#: header.php:23
 msgid "Skip to content"
 msgstr "コンテンツへスキップ"
 
-#: inc/extras.php:63
+#: inc/extras.php:52
 msgid "Page %s"
 msgstr "ページ %s"
 
@@ -227,74 +89,191 @@ msgid "Posts navigation"
 msgstr "投稿ナビゲーション"
 
 #: inc/template-tags.php:27
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> 以前の投稿"
+msgid "Older posts"
+msgstr "以前の投稿"
 
 #: inc/template-tags.php:31
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "新しい投稿 <span class=\"meta-nav\">&rarr;</span>"
+msgid "Newer posts"
+msgstr "新しい投稿"
 
 #: inc/template-tags.php:56
 msgid "Post navigation"
 msgstr "投稿ナビゲーション"
 
-#: inc/template-tags.php:59
-msgctxt "Previous post link"
-msgid "<span class=\"meta-nav\">&larr;</span> %title"
-msgstr "<span class=\"meta-nav\">&larr;</span> %title"
-
-#: inc/template-tags.php:60
-msgctxt "Next post link"
-msgid "%title <span class=\"meta-nav\">&rarr;</span>"
-msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
-
-#: inc/template-tags.php:81
-msgid "Pingback:"
-msgstr "ピンバック:"
+#: inc/template-tags.php:86
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "投稿日時: %s"
 
 #: inc/template-tags.php:91
-msgid "%s <span class=\"says\">says:</span>"
-msgstr "%s <span class=\"says\">のコメント:</span>"
+msgctxt "post author"
+msgid "by %s"
+msgstr "投稿者: %s"
 
-#: inc/template-tags.php:97
-msgctxt "1: date, 2: time"
-msgid "%1$s at %2$s"
-msgstr "%1$s %2$s"
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:108 inc/template-tags.php:114
+msgid ", "
+msgstr ", "
 
-#: inc/template-tags.php:104
-msgid "Your comment is awaiting moderation."
-msgstr "コメントは現在承認待ちです。"
+#: inc/template-tags.php:110
+msgid "Posted in %1$s"
+msgstr "カテゴリー: %1$s"
+
+#: inc/template-tags.php:116
+msgid "Tagged %1$s"
+msgstr "タグ: %1$s"
+
+#: inc/template-tags.php:122
+msgid "Leave a comment"
+msgstr "コメントをどうぞ"
+
+#: inc/template-tags.php:122
+msgid "1 Comment"
+msgstr "1件のコメント"
+
+#: inc/template-tags.php:122
+msgid "% Comments"
+msgstr "%件のコメント"
+
+#: inc/template-tags.php:126 template-parts/content-page.php:26
+msgid "Edit"
+msgstr "編集"
+
+#: inc/template-tags.php:143
+msgid "Category: %s"
+msgstr "カテゴリーアーカイブ: %s"
 
 #: inc/template-tags.php:145
-msgid ""
-"<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
-"%2$s</span>"
+msgid "Tag: %s"
+msgstr "タグアーカイブ: %s"
+
+#: inc/template-tags.php:147
+msgid "Author: %s"
+msgstr "投稿者アーカイブ: %s"
+
+#: inc/template-tags.php:149
+msgid "Year: %s"
+msgstr "%s年のアーカイブ"
+
+#: inc/template-tags.php:149
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: inc/template-tags.php:151
+msgid "Month: %s"
+msgstr "%sのアーカイブ"
+
+#: inc/template-tags.php:151
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "Y年F"
+
+#: inc/template-tags.php:153
+msgid "Day: %s"
+msgstr "%sのアーカイブ"
+
+#: inc/template-tags.php:153
+msgctxt "daily archives date format"
+msgid "F j, Y"
 msgstr ""
-"<span class=\"posted-on\">投稿日時: %1$s</span><span class=\"byline\"> 投稿"
-"者: %2$s</span>"
+
+#: inc/template-tags.php:156
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr "アサイド"
+
+#: inc/template-tags.php:158
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr "ギャラリー"
+
+#: inc/template-tags.php:160
+msgctxt "post format archive title"
+msgid "Images"
+msgstr "画像"
+
+#: inc/template-tags.php:162
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr "動画"
+
+#: inc/template-tags.php:164
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr "引用"
+
+#: inc/template-tags.php:166
+msgctxt "post format archive title"
+msgid "Links"
+msgstr "リンク"
+
+#: inc/template-tags.php:168
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr "ステータス"
+
+#: inc/template-tags.php:170
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr "オーディオ"
+
+#: inc/template-tags.php:172
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr "チャット"
+
+#: inc/template-tags.php:175
+msgid "Archives: %s"
+msgstr "アーカイブ: %s"
+
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+#: inc/template-tags.php:179
+msgid "%1$s: %2$s"
+msgstr "%1$s アーカイブ: %2$s"
+
+#: inc/template-tags.php:181
+msgid "Archives"
+msgstr "アーカイブ"
 
 #: search.php:16
 msgid "Search Results for: %s"
 msgstr "検索結果: %s"
 
-#: searchform.php:10
-msgctxt "label"
-msgid "Search for:"
-msgstr "検索"
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "何も見つかりませんでした"
 
-#: searchform.php:11
-msgctxt "placeholder"
-msgid "Search &hellip;"
-msgstr "検索 &hellip;"
+#: template-parts/content-none.php:20
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"最初の投稿を公開する準備ができましたか ?<a href=\"%1$s\">こちらからスタートし"
+"ましょう</a>。"
 
-#: searchform.php:13
-msgctxt "submit button"
-msgid "Search"
-msgstr "検索"
+#: template-parts/content-none.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"検索キーワードに一致するコンテンツが見つかりませんでした。他のキーワードをお"
+"試しください。"
 
-#: sidebar.php:24
-msgid "Meta"
-msgstr "メタ"
+#: template-parts/content-none.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "お探しのコンテンツが見つかりません。検索をお試しください。"
+
+#: template-parts/content-page.php:19 template-parts/content-single.php:23
+#: template-parts/content.php:32
+msgid "Pages:"
+msgstr "ページ:"
+
+#. translators: %s: Name of current post
+#: template-parts/content.php:25
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "続きを読む %s <span class=\"meta-nav\">&rarr;</span>"
 
 #. Theme Name of the plugin/theme
 msgid "_s"

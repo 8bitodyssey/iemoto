@@ -4,101 +4,76 @@ module.exports = function( grunt ) {
 
   // Project configuration
   grunt.initConfig( {
-    pkg:  grunt.file.readJSON( 'package.json' ),
+    pkg: grunt.file.readJSON( 'package.json' ),
+
+    // javascript
     jshint: {
-      all: [
-        'Gruntfile.js',
+      dist: [
         'js/{%= file_name %}.js'
       ],
       options: {
-        curly:   true,
-        eqeqeq:  true,
-        immed:   true,
-        latedef: true,
-        newcap:  true,
-        noarg:   true,
-        sub:   true,
-        undef:   true,
-        boss:  true,
-        eqnull:  true,
-        globals: {
-          exports: true,
-          module:  false,
-          jQuery: false,
-          Console: false
-        }
-      }
-    },
-    uglify: {
-      all: {
-        files: {
-          'js/{%= file_name %}.min.js': [
-            'js/{%= file_name %}.js'
-          ]
-        },
-        options: {
-          banner: '/**\n' +
-            ' * <%= pkg.title %> - v<%= pkg.version %>\n' +
-            ' *\n' +
-            ' * <%= pkg.homepage %>\n' +
-            ' *\n' +
-            ' * Copyright <%= grunt.template.today("yyyy") %>, <%= pkg.author.name %> (<%= pkg.author.url %>)\n' +
-            ' * Released under the <%= pkg.license %>\n' +
-            ' */\n',
-          mangle: {
-            except: ['jQuery']
-          }
-        }
+        jshintrc: true
       }
     },
 
+    // compass(sass)
     compass: {
+      dev: {
+        options: {
+          sassDir:        'sass',
+          cssDir:         'css',
+          imagesDir:      'images',
+          outputStyle:    'expanded',
+          relativeAssets: true,
+          noLineComments: true,
+          sourcemap:      true,
+          force:          true
+        }
+      },
       dist: {
         options: {
-          sassDir: 'sass',
-          cssDir: 'css',
-          outputStyle: 'nested',
-          imagesDir: 'img',
-          javascriptsDir: 'js'
+          sassDir:        'sass',
+          cssDir:         './',
+          imagesDir:      'images',
+          outputStyle:    'expanded',
+          relativeAssets: true,
+          noLineComments: true,
+          sourcemap:      false,
+          force:          true
         }
       }
     },
-    cssmin: {
-      options: {
-      banner: '/*\n' +
-        'Theme Name: {%= title %}\n' +
-        'Theme URI: {%= homepage %}\n' +
-        'Author: {%= author_name %}\n' +
-        'Author URI: {%= author_url %}\n' +
-        'Description: {%= description %}\n' +
-        'Version: 1.0\n' +
-        'License: GNU General Public License v2 or later\n' +
-        'License URI: http://www.gnu.org/licenses/gpl-2.0.html\n' +
-        'Text Domain: {%= prefix %}\n' +
-        'Domain Path: /languages\n' +
-        'Tags:\n' +
-        '*/\n'
-      },
-      combine: {
-        files: {
-          'style.css': [
-            'css/{%= file_name %}.css'
-          ]
-        }
+    replace: {
+      dist: {
+        src: ['css/style.css', 'style.css'],
+        overwrite: true,
+        replacements: [{
+          from: /<%= pkg.version %>/g,
+          to: '<%= pkg.version %>'
+         }]
+      }
+    },
+
+    // watch
+    watch: {
+      dist: {
+        files: [
+          'sass/{,*/}{,*/}*.scss',
+          'js/{%= file_name %}.js'
+        ],
+        tasks: ['jshint', 'compass', 'replace']
       }
     }
+
   } );
-  //
+
   // Load other tasks
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  require('load-grunt-tasks')(grunt);
 
   // Default task.
   grunt.registerTask(
     'default',
-    ['jshint', 'uglify', 'compass', 'cssmin']
+    ['jshint', 'compass', 'replace']
   );
 
   grunt.util.linefeed = '\n';

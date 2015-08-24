@@ -1,62 +1,77 @@
 # Iemoto
 
-これは、WordPressテーマ用の [grunt-init](http://gruntjs.com/project-scaffolding) テンプレートです。
+This is a WordPress Starter Theme based on [_s](https://github.com/automattic/_s) and integrated with [grunt](http://gruntjs.com/project-scaffolding).
 
-Grunt を使うとWordPressテーマを開発する上で必要な様々なプロセスを自動化することができます。
+Iemoto follows all the fixes and feature upgrades of [_s](https://github.com/automattic/_s)
 
-[underscores]: https://github.com/automattic/_s
-[grunt-init]: http://gruntjs.com/project-scaffolding
+Automate theme development process with it!
 
-## インストール
+## How to install
 
-### grunt-init をインストール
+### install grunt-init
 
-まずはじめに `grunt-init` をインストールしてください。
+If you've never used any `grunt-init` templates follow below to install `grunt-init`.
 
 ```
 sudo npm install -g grunt-init
 ```
 
-次に、`~/.grunt-init` ディレクトリを作成してください。
+Next, create `~/.grunt-init` directory.
 
 ```
 mkdir ~/.grunt-init
 ```
 
-ここまでの作業は、他の `grunt-init` テンプレートを使ったことがあれば不要です。
+### Install Iemoto
 
-### Iemoto をインストール
-
-次にこのテンプレートを git から取得して下さい。
+Get this templates via git.
 
 ```
 git clone git@github.com:megumiteam/iemoto.git ~/.grunt-init/iemoto
 ```
 
-https を使う場合は以下のとおり。
+Or if you prefer https, try this.
 
 ```
 git clone https://github.com/megumiteam/iemoto.git ~/.grunt-init/iemoto
 ```
 
-## 使い方
+### Sass(Compass)
 
-`wp-content/themes` ディレクトリ以下に、任意の名前のテーマ用ディレクトリを作成してください。
+Iemoto utilizes Sass and Compass to create style.css and editor-style.css.
+Get them first.
+
+* Sass: http://sass-lang.com/
+* Compass: http://compass-style.org/
+
+### gulp
+
+You can also use [gulp.js](http://gulpjs.com/) for js/sass compiling if installed.
+
+```
+$ npm install --global gulp
+```
+
+* gulp.js: http://gulpjs.com/
+
+## Usage
+
+Create your theme directory in `wp-content/themes`.
 
 ```
 mkdir wp-content/themes/my-theme
 ```
 
-ディレクトリを作成後そのディレクトリに移動し、次に以下のコマンドを実行して、テーマのベースとなる各種のファイルを作ります。
+Cd to your theme directory run `grunt-init iemoto` to create theme files.
 
 ```
 grunt-init iemoto
 ```
 
-このコマンドを実行すると、テーマ名やDescription、ライセンスなど、いくつかの情報の入力を求められます。
+By commanding above, you will be asked for some inputs such as Theme Name, Description, license and so on.
 
 ```
-[miyauchi@localhost iemoto]$ grunt-init iemoto
+$ grunt-init iemoto
 Running "init:iemoto" (init) task
 This task will create one or more files in the current directory, based on the
 environment and the answers to a few questions. Note that answering "?" to any
@@ -70,25 +85,26 @@ Please answer the following:
 [?] Project homepage (https://digitalcube.jp/) 
 [?] Author name (Digitalcube Co,.Ltd) 
 [?] Author url (https://digitalcube.jp/) 
+[?] Use gulp? (y/N) 
 [?] Do you need to make any changes to the above before continuing? (y/N)
 ```
 
-最後に、変更はありませんか？と尋ねられるので、`n` と入力するか、そのままエンターキーを押すとテーマのテンプレートが作成されます。
+At the end of this procedure, you will be asked if there are any changes. Type `N` or enter key to create the templates.
 
-次に以下のコマンドを実行して `grunt` の実行に必要な Grunt プラグインをダウンロードしてください。
+When asked `[?] Use gulp? (y/N) `, type `y` to create files you need for gulp. It's `N` by default.
+
+Then, command `npm install` to download files needed for `grunt` (or `gulp`) command.
 
 ```
 npm install
 ```
 
-ここで、インストールされる Grunt プラグインは `package.json` 内で定義されています。
+Files to be installed are defined in `package.json` file.
 
-以上が完了すると、ディレクトリ内に以下のようにテーマ用のファイルが生成されていることを確認できると思います。
+Once you are done to this point, you can see all the files created as below.
 
 ```
 ├── 404.php
-├── Gruntfile.js
-├── README.md
 ├── archive.php
 ├── comments.php
 ├── content-none.php
@@ -97,6 +113,7 @@ npm install
 ├── content.php
 ├── footer.php
 ├── functions.php
+├── Gruntfile.js (or gulpfile.js )
 ├── header.php
 ├── inc
 │   ├── custom-header.php
@@ -111,86 +128,138 @@ npm install
 │   ├── navigation.js
 │   └── skip-link-focus-fix.js
 ├── languages
-│   ├── _s.pot
+│   ├── <themename>.pot
 │   ├── ja.mo
 │   ├── ja.po
 │   └── readme.txt
-├── layouts
-│   ├── content-sidebar.css
-│   └── sidebar-content.css
 ├── node_modules
 ├── package.json
 ├── page.php
+├── README.md
 ├── rtl.css
 ├── sass
-│   ├── _wordpress.scss
-│   └── iemoto.scss
+│   ├── _reset.scss
+│   ├── editor-style.scss
+│   ├── style.scss
+│   ├── elements
+│   │   ├── _elements.scss
+│   │   ├── _lists.scss
+│   │   └── _tables.scss
+│   ├── forms
+│   │   ├── _buttons.scss
+│   │   ├── _fields.scss
+│   │   └── _forms.scss
+│   ├── layout
+│   │   ├── _content-sidebar.scss
+│   │   └── _sidebar-content.scss
+│   ├── media
+│   │   ├── _captions.scss
+│   │   ├── _galleries.scss
+│   │   └── _media.scss
+│   ├── mixins
+│   │   └── _mixins-master.scss
+│   ├── modules
+│   │   ├── _accessibility.scss
+│   │   ├── _alignments.scss
+│   │   ├── _clearings.scss
+│   │   └── _infinite-scroll.scss
+│   ├── navigation
+│   │   ├── _links.scss
+│   │   ├── _menus.scss
+│   │   └── _navigation.scss
+│   ├── site
+│   │   ├── _site.scss
+│   │   ├── primary
+│   │   │   ├── _asides.scss
+│   │   │   ├── _comments.scss
+│   │   │   └── _posts-and-pages.scss
+│   │   └── secondary
+│   │   │   └── _widgets.scss
+│   ├── typography
+│   │   ├── _copy.scss
+│   │   ├── _headings.scss
+│   │   └── _typography.scss
+│   └── variables-site
+│        ├── _colors.scss
+│        ├── _structure.scss
+│        ├── _typography.scss
+│        └── _variables-site.scss
 ├── screenshot.png
 ├── search.php
-├── searchform.php
 ├── sidebar.php
 ├── single.php
 └── style.css
 ```
 
-以上でテーマの開発に必要な環境が整いました。
+Create you own theme now.
 
-## デフォルト値について
+## Default values
 
-`grunt-init` 実行時に表示される各種プロンプトにはデフォルト値を設定することができます。
+You can set default values to the `grunt-init` prompt.
 
-名前やURL等は、あらかじめデフォルト値を設定してくとさらに便利になります。
+It will be more useful if there is a name and URL.
 
-デフォルト値を設定するには以下のように、`defaults.json` を設置し、そのファイルを編集してください。
+To set default values, put defaults.json and edit it.
 
 ```
 cp ~/.grunt-init/iemoto/defaults.json.sample ~/.grunt-init/defaults.json
 ```
 
-## CSS や JavaScript ファイルの minify について
+## Minifying css and javascripts with grunt
 
-`.js` や `.css` などのファイルを修正したら、以下のコマンドを実行して下さい。
-
-たったこれだけで、minifyが自動的に行われます。
+When you've edited `.js` and `.scss`, command this. 
 
 ```
 grunt
 ```
 
-## watch について
+## Minifying css and javascripts with gulp
 
-grunt watch を使えば、ファイルの更新を grunt が監視し、自動的に minify 等の作業を行います。
+When you've edited `.js` and `.scss`, command this. 
+
+```
+gulp
+```
+
+You can `gulp js` or `gulp compass` to specify just js or Sass(Compass).
+
+## watch
+
+If you utilize `grunt watch` or `gulp watch`, grunt(gulp) will watch the file editing and automatically minify them.
+
 
 ```
 grunt watch
+// or
+gulp watch
 ```
 
-watch を終了するには、キーボードで `[control]+[c]` を押して下さい。
+To stop watch, type `[control]+[c]`
 
-## composer について
+## Version of javascripts and styles
 
-このテンプレートは、[composer](http://getcomposer.org/) にも対応しています。
-
-`composer` を使用するには、`grunt-init` 実行時に表示されるプロンプトで、`y` と答えて下さい。
-
-その後、以下のコマンドを実行しましょう。
+Iemoto adds versions to js and css which is specified in package.json as
 
 ```
-composer install
+"version": "0.1.0",
 ```
 
-以上で、composer.json に記述された各種のライブラリが自動的にダウンロードされ、テーマによって `require()` されます。
+When grunt(gulp)ed, the version specified in package.json will be implemented in style.css and .js as comments, and also will be passed to `wp_enqueue_style()` and `wp_enqueue_script()`.
 
-## 公式ディレクトリ等へ登録する際の注意
+### Debug mode and Sourcemap
 
-* `composer` の動作環境は php5.3+ である一方で、WordPressの動作環境は php5.2+ です。`composer` を使用する際には、readme.txt に php5.3+ が動作条件である旨を書くようにしましょう。
-* 以下のファイルは公式ディレクトリに登録する際には、svn:ignore しておきましょう。
- * node_modules
- * composer.phar
+If WP_DEBUG is true, theme will load `css/style.css`, which has Sourcemap integrated, instead of `style.css`, which is the Sourcemap-ommited version of the `css/style.css`.
 
-## フィードバック
+Sourcemap is available if your Sass version is greater than 3.3.0.
 
-皆様からのフィードバックをお待ちしています。
+
+## Note when you share your theme on WordPress.org directory
+
+svn:ignore `node_modules` directory
+
+## Feedbacks
+
+Feedbacks are very much welcome!
 
 * https://github.com/megumiteam/iemoto/issues
 
@@ -198,5 +267,7 @@ composer install
 
 * [miya0001](https://github.com/miya0001)
 * [gatespace](https://github.com/gatespace)
-* [Digitalcube Co.,Ltd](https://digitalcube.jp/)
+* [8bitodyssey](https://github.com/8bitodyssey)
+* [ShinichiNishikawa](https://github.com/ShinichiNishikawa)
+* [tekapo](https://github.com/tekapo)
 
